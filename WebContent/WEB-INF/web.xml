@@ -4,6 +4,25 @@
   <welcome-file-list>
     <welcome-file>/login/begin</welcome-file>
   </welcome-file-list>
+  <!-- spring相关配置  包括spring_security  多条记录用逗号分隔-->
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>
+  	classpath:META-INF\spring\applicationContext.xml,
+  	classpath:META-INF\spring\security\security_base.xml
+  	</param-value>
+  </context-param>
+  
+  <!-- 增加security的过滤器连 -->
+  <filter>  
+    <filter-name>springSecurityFilterChain</filter-name>  
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  
+  </filter>  
+  <filter-mapping>  
+    <filter-name>springSecurityFilterChain</filter-name>  
+    <url-pattern>/*</url-pattern>  
+  </filter-mapping>  
+  <!-- mvc的转发器 -->
   <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -17,4 +36,11 @@
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  
+  <!-- spring 上下文监听器 -->
+  <listener >
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
 </web-app>

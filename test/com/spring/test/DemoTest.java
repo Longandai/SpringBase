@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.demo.Demo;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration (locations = "classpath:META-INF/spring/applicationContext.xml")
+@ContextConfiguration (locations = "classpath:META-INF/spring/test/applicationContext.xml")
 public class DemoTest {
 	@Resource(name = "demo")
 	private Demo demo;
