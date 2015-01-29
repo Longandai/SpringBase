@@ -3,11 +3,20 @@
   xmlns:beans="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	
+	<!-- 静态文件不校验 -->
+	<http  pattern="/**/*.jpg" security="none"></http>
+    <http  pattern="/**/*.png"  security="none"></http>
+	<http  pattern="/**/*.gif"  security="none"></http>
+	<http  pattern="/**/*.css"  security="none"></http>
+	<http  pattern="/**/*.js" security="none"></http>
 	<!-- 拦截所有 -->
 	<http auto-config="true">
+	
+	 	
 		<intercept-url pattern="/**" access="ROLE_USER"/>
 	</http>
 	<!-- 配置角色 -->

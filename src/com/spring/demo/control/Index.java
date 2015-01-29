@@ -13,6 +13,6 @@ public class Index {
 		@RequestMapping("/")
 		public String index(){
 			System.out.println(request.getContextPath());
-			return "login/login";
+			return "index/index";
 		}
 }
