@@ -1,4 +1,4 @@
-package com.spring.demo.control;
+package com.spring.demo.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
