@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.spring.demo.security.role.SelfRole;
 import com.spring.demo.security.user.SelfUser;
 
 public class SelfUserService implements UserDetailsService {
@@ -28,8 +29,8 @@ public class SelfUserService implements UserDetailsService {
 		selfUser.setUsername(arg0);
 		if(arg0.equals("liuzhilong")){
 			Set<GrantedAuthority>  a = new HashSet<GrantedAuthority>();
-			a.add(new GrantedAuthorityImpl("ROLE_USER"));
-			a.add(new GrantedAuthorityImpl("ROLE_ADMIN"));
+			a.add(new SelfRole("ROLE_USER"));
+			a.add(new SelfRole("ROLE_ADMIN"));
 			selfUser.setPassword("loveaiai");
 			selfUser.setAuthorities(a);
 			selfUser.setAccountNonExpired(true);
