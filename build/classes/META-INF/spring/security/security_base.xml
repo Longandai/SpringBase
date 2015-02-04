@@ -13,9 +13,17 @@
 	<http  pattern="/**/*.gif"  security="none"></http>
 	<http  pattern="/**/*.css"  security="none"></http>
 	<http  pattern="/**/*.js" security="none"></http>
+	<http  pattern="/login/begin" security="none"></http>
 	<!-- 拦截所有 -->
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_USER"/>
+		<!--login-page  自定义登录的页面  -->
+		<!--default-target-url 登陆成功后默认跳转的页面  -->
+		<form-login 
+		login-page="/login/begin" 
+		default-target-url="/index"/>
+			
+		
 	</http>
 	<!-- 配置角色 -->
 	<authentication-manager>

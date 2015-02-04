@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class Index {
 		@Autowired  
 		private  HttpServletRequest request;  
-		@RequestMapping("/")
+		@RequestMapping("/index")
 		public ModelAndView index(){
 			ModelAndView andView = new ModelAndView("begin");
 			System.out.println(request.getContextPath());

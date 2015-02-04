@@ -4,7 +4,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +18,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.spring.demo.security.user.SelfUser;
 
 public class SelfUserService implements UserDetailsService {
-
 	@Override
 	public UserDetails loadUserByUsername(String arg0)
 			throws UsernameNotFoundException {
+//		System.out.println(request.getContextPath());
 		System.out.println(arg0);
 		// TODO Auto-generated method stub
 		SelfUser selfUser=new SelfUser();
