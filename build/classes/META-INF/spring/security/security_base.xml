@@ -15,17 +15,12 @@
 	<http  pattern="/**/*.js" security="none"></http>
 	<!-- 拦截所有 -->
 	<http auto-config="true">
-	
-	 	
 		<intercept-url pattern="/**" access="ROLE_USER"/>
 	</http>
 	<!-- 配置角色 -->
 	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="liuzhilong" password="loveaiai"  authorities="ROLE_USER,ROLE_ADMIN"/>
-				<user name="lvke" password="lvke"  authorities="ROLE_USER"/>
-			</user-service>
+		<authentication-provider user-service-ref="selfUserService">
 		</authentication-provider>
 	</authentication-manager>
+	<beans:bean id="selfUserService" class="com.spring.demo.security.SelfUserService"></beans:bean>
 </beans:beans>
