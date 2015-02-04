@@ -39,10 +39,7 @@ public class SelfUserService implements UserDetailsService {
 			selfUser.setAccountNonLocked(true);
 			
 		}else{
-			selfUser.setAccountNonExpired(false);
-			selfUser.setEnabled(false);
-			selfUser.setCredentialsNonExpired(false);
-			selfUser.setAccountNonLocked(false);
+			return  null;
 		}
 		
 		return selfUser;

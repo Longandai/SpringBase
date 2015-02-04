@@ -15,19 +15,22 @@
 	<http  pattern="/**/*.js" security="none"></http>
 	<!-- 登陆页面不进行拦截 -->
 	<http  pattern="/login/begin" security="none"></http>
+	<!-- 403页面不拦截 -->
+	<http pattern="/error/loginerror" security="none"></http>
 	<!-- 拦截所有 -->
-	<http auto-config="true">
+	<http auto-config="true" >
 		<intercept-url pattern="/**" access="ROLE_USER"/>
 		<!--login-page  自定义登录的页面  -->
 		<!--default-target-url 登陆成功后默认跳转的页面  -->
 		<form-login 
 		login-page="/login/begin" 
+		authentication-failure-url="/error/loginerror"
 		default-target-url="/index"/>
 			
 		
 	</http>
 	<!-- 配置角色 -->
-	<authentication-manager>
+	<authentication-manager >
 		<authentication-provider user-service-ref="selfUserService">
 		</authentication-provider>
 	</authentication-manager>
