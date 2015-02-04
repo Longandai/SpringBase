@@ -13,6 +13,7 @@
 	<http  pattern="/**/*.gif"  security="none"></http>
 	<http  pattern="/**/*.css"  security="none"></http>
 	<http  pattern="/**/*.js" security="none"></http>
+	<!-- 登陆页面不进行拦截 -->
 	<http  pattern="/login/begin" security="none"></http>
 	<!-- 拦截所有 -->
 	<http auto-config="true">
