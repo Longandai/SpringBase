@@ -9,7 +9,8 @@
   	<param-name>contextConfigLocation</param-name>
   	<param-value>
   	classpath:META-INF\spring\applicationContext.xml,
-  	classpath:META-INF\spring\security\security_base.xml
+  	classpath:META-INF\spring\security\security_base.xml,
+  	classpath:META-INF\spring\jdbc\spring_jdbc.xml
   	</param-value>
   </context-param>
    <!-- 增加spring 的字符过滤器 -->

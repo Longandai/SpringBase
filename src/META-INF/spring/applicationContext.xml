@@ -16,6 +16,15 @@ default-autowire="byName">
 <context:annotation-config/>
 <!-- 配置自动代理 aop相关 -->
 <aop:aspectj-autoproxy/>
+
+<!-- 定义property -->
+<bean
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations">
+		<value>classpath:META-INF/config.properties</value>
+	</property>
+</bean>
+
 <mvc:annotation-driven></mvc:annotation-driven>
 <mvc:resources location="/example/css/" mapping="/example/css/**"/>
 <mvc:resources location="/example/js/" mapping="/example/js/**"/>
