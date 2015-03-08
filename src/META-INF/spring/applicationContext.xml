@@ -11,7 +11,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 default-autowire="byName">
 <!-- 自动扫描  租借方式 启动自动扫描的包 -->
-<context:component-scan base-package="com.spring.demo,com.spring.aspect.demo,com.spring.demo.control"/>
+<context:component-scan base-package="com.spring.demo,com.spring.aspect.demo,com.spring.demo.control,com.spring.demo.user"/>
 <!--配置自动注入  -->
 <context:annotation-config/>
 <!-- 配置自动代理 aop相关 -->
